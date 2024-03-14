@@ -30,7 +30,7 @@ job:
         run: mvn install
 
       - name: Build app
-        run:
+        run| 
           mvn clean
           mvn -B package --file pop.xml
 
