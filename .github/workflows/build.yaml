@@ -37,8 +37,8 @@ jobs:
       - name: Sing in to docker-hub
         uses: docker/login-action@v3
         with:
-          username: ${{secret.DOCKER_HUB_USERNAME}}
-          passwords: ${{secret.DOCKER_HUB_TOKEN}}
+          username: ${{secrets.DOCKER_HUB_USERNAME}}
+          passwords: ${{secrets.DOCKER_HUB_TOKEN}}
 
       - name: Build and push
         uses: docker/build-push-action@v5
