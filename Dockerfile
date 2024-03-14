@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpineo
-WORKDIR /appo
-COPY ./target/*jar app.jaro
-ENTRYPOINT ["java","-jar","app.jar"]o
+FROM amazoncorretto:17-alpine
+WORKDIR /app
+COPY ./target/*jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
