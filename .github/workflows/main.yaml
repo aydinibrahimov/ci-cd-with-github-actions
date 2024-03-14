@@ -24,8 +24,17 @@ job:
           key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+            
+
       - name: Install Maven dependencies
         run: mvn install
+
+      - name: Build app
+        run:
+          mvn clean
+          mvn -B package --file pop.xml
+
+
 
       - name: Sing in to docker-hub
         uses: docker/login-action@v3
