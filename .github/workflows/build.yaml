@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v2  # Update to v3 (or latest stable version)
         with:
           distribution: 'corretto'  # Replace if using option 1 from point 1
-          java-version: 11
+          java-version: 17
 
 #      - name: Cache Maven packages  # Cache dependencies to speed up builds
 #        uses: actions/cache@v3
