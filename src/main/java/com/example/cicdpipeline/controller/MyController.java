@@ -1,4 +1,4 @@
-package com.example.cicdpipline.controller;
+package com.example.cicdpipeline.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
