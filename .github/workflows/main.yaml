@@ -45,3 +45,5 @@ job:
           context:
             dockerfile: Dockerfile
             push: true
+            tags: user/app:latest
+
