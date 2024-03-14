@@ -1,7 +1,8 @@
 name: CI/CD Pipeline with github actions
 on:
   push:
-    branch: [main]
+    branches:
+      - main
 
 job:
   build-java-app:
