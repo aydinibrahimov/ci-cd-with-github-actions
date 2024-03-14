@@ -26,9 +26,6 @@ job:
             ${{ runner.os }}-maven-
             
 
-      - name: Install Maven dependencies
-        run: mvn install
-
       - name: Build app
         run: | 
           mvn clean
