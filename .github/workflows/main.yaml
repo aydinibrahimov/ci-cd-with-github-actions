@@ -9,10 +9,10 @@ job:
     runs-on: ubuntu-latest #OS for the runner
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: 17
@@ -40,7 +40,7 @@ job:
           passwords: ${{secret.DOCKER_HUB_TOKEN}}
 
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           context:
             dockerfile: Dockerfile
