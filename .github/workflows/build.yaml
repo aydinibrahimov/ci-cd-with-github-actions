@@ -18,13 +18,13 @@ jobs:
           distribution: 'corretto'  # Replace if using option 1 from point 1
           java-version: 11
 
-      - name: Cache Maven packages  # Cache dependencies to speed up builds
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+#      - name: Cache Maven packages  # Cache dependencies to speed up builds
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.m2/repository
+#          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
+#          restore-keys: |
+#            ${{ runner.os }}-maven-
 
 
       - name: Build app
