@@ -40,7 +40,7 @@ job:
           passwords: ${{secret.DOCKER_HUB_TOKEN}}
 
       - name: Build and push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v4
         with:
           context:
             dockerfile: Dockerfile
