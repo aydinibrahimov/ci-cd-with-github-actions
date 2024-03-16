@@ -10,20 +10,20 @@ jobs:
     runs-on: ubuntu-latest #OS for the runner
     steps:
       - name: Checkout code  # Update to recommended version
-        uses: actions/checkout@v4 # Consider updating to latest stable version (e.g., v3.1)
+        uses: actions/checkout@v3 # Consider updating to latest stable version (e.g., v3.1)
       - name: Setup JDK 17  # Update to recommended version
-        uses: actions/setup-java@v3  # Update to v3 (or latest stable version)
+        uses: actions/setup-java@v4  # Update to v3 (or latest stable version)
         with:
           distribution: 'corretto'  # Replace if using option 1 from point 1
           java-version: 17
 
-            - name: Cache Maven packages  # Cache dependencies to speed up builds
-              uses: actions/cache@v3
-              with:
-                path: ~/.m2/repository
-                key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
-                restore-keys: |
-                  ${{ runner.os }}-maven-
+      - name: Cache Maven packages  # Cache dependencies to speed up builds
+          uses: actions/cache@v3
+          with:
+            path: ~/.m2/repository
+            key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
+            restore-keys: |
+              ${{ runner.os }}-maven-
 
 
       - name: Build app
