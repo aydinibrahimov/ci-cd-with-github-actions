@@ -12,8 +12,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '21'
+          distribution: 'zulu'
+
 
       - name: Cache Maven packages  # Cache dependencies to speed up builds
         uses: actions/cache@v3
