@@ -14,8 +14,8 @@ jobs:
       - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'corretto'
           java-version: 17
+          distribution: 'corretto'
       - name: Cache Maven packages  # Cache dependencies to speed up builds
           uses: actions/cache@v3
           with:
