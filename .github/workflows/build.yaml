@@ -1,4 +1,4 @@
-name: CI/CD Pipeline with github actions
+name: CI/CD pipeline for a Java application using GitHub actions
 on:
   push:
     branches:
@@ -9,12 +9,12 @@ jobs:
     name: Build and Deploy Java app
     runs-on: ubuntu-latest #OS for the runner
     steps:
-      - name: Checkout code  # Update to recommended version
-        uses: actions/checkout@v3 # Consider updating to latest stable version (e.g., v3.1)
-      - name: Setup JDK 17  # Update to recommended version
-        uses: actions/setup-java@v4  # Update to v3 (or latest stable version)
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
         with:
-          distribution: 'corretto'  # Replace if using option 1 from point 1
+          distribution: 'corretto'
           java-version: 17
       - name: Cache Maven packages  # Cache dependencies to speed up builds
           uses: actions/cache@v3
@@ -26,7 +26,7 @@ jobs:
       - name: Build app
         run: |
           mvn clean
-          mvn -B package --file pom.xml  # Typo fixed (pom.xml instead of pop.xml)
+          mvn -B package --file pom.xml
       - name: Sing in to docker-hub
         uses: docker/login-action@v3
         with:
