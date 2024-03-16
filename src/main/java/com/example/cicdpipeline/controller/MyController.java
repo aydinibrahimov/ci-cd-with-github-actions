@@ -10,6 +10,6 @@ public class MyController {
 
     @GetMapping
     public String helloVisitor(){
-        return "Hello visitor";
+        return "<h1>Hello visitor</h1>";
     }
 }
