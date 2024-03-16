@@ -19,12 +19,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Generate Prime Numbers
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: /generate-primes.sh -d prime-numbers
 
-      - name: Use Prime Numbers
-        run: /primes.sh -d prime-numbers
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
