@@ -2,7 +2,7 @@ name: CI/CD pipeline for a Java application using GitHub actions
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-java-app:
