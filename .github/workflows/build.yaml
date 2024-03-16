@@ -34,7 +34,7 @@ jobs:
       #          restore-keys: |
       #            ${{ runner.os }}-maven-
       - name: Build app
-        run:
+        run: |
           mvn clean
           mvn -B package --file pom.xml
 
