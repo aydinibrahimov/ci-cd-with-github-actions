@@ -11,18 +11,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Setup JDK 17
         uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: 'corretto'
+
       - name: Cache Maven packages  # Cache dependencies to speed up builds
-          uses: actions/cache@v3
-          with:
-            path: ~/.m2/repository
-            key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
-            restore-keys: |
-              ${{ runner.os }}-maven-
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - name: Build app
         run: |
           mvn clean
