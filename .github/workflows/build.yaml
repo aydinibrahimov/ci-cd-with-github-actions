@@ -33,6 +33,9 @@ jobs:
       #          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
       #          restore-keys: |
       #            ${{ runner.os }}-maven-
+      - name: Check for Maven
+          run: mvn -v
+
       - name: Build app
         run: |
           mvn clean
