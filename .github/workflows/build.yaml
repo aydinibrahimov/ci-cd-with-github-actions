@@ -9,21 +9,35 @@ jobs:
     name: Build and Deploy Java app
     runs-on: ubuntu-latest #OS for the runner
     steps:
-      - uses: actions/checkout@v3.1.2
-      - uses: actions/setup-node@v3.4.1
+      - uses: actions/checkout@v3
+
+      - name: Cache local Maven repository
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Generate Prime Numbers
+        if: steps.cache-primes.outputs.cache-hit != 'true'
+        run: /generate-primes.sh -d prime-numbers
+
+      - name: Use Prime Numbers
+        run: /primes.sh -d prime-numbers
       - uses: actions/setup-java@v3.4.3
         with:
           java-version: '17'
           distribution: 'corretto'
 
 
-      - name: Cache Maven packages  # Cache dependencies to speed up builds
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+      #      - name: Cache Maven packages  # Cache dependencies to speed up builds
+      #        uses: actions/cache@v3
+      #        with:
+      #          path: ~/.m2/repository
+      #          key: ${{ runner.os }}-maven-${{ hashFiles('pom.xml') }}
+      #          restore-keys: |
+      #            ${{ runner.os }}-maven-
       - name: Build app
         run: |
           mvn clean
