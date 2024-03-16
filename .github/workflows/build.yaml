@@ -15,8 +15,8 @@ jobs:
           with:
             node-version: 20
         with:
-          java-version: '21'
-          distribution: 'zulu'
+          java-version: '17'
+          distribution: 'corretto'
 
 
       - name: Cache Maven packages  # Cache dependencies to speed up builds
