@@ -46,6 +46,3 @@ jobs:
           context: .
           push: true
           tags: user/app:latest
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
