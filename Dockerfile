@@ -34,7 +34,7 @@ COPY . .
 RUN mvn clean package --file pom.xml
 
 # Expose the port where the application listens (replace 8080 with actual port)
-EXPOSE 2244
+EXPOSE 8080
 
 # Set the default command to run the application (replace "your.main.class" with actual class)
 CMD ["java", "-jar", "your.main.class"]
