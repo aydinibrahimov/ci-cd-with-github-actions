@@ -37,5 +37,5 @@ RUN mvn clean package --file pom.xml
 EXPOSE 8080
 
 # Set the default command to run the application (replace "your.main.class" with actual class)
-CMD ["java", "-jar", "your.main.class"]
+CMD ["java", "-jar", "target"]
 
