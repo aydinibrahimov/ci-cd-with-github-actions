@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("github-actions/cicd/v1")
 public class MyController {
 
+    //fyguhyuegrf
     @GetMapping
     public String helloVisitor(){
         return "<h1>Hello visitor</h1>";
