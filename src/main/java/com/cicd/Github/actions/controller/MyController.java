@@ -1,0 +1,16 @@
+package com.cicd.Github.actions.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("github-actions/cicd/v1")
+public class MyController {
+
+    //fyguhyu
+    @GetMapping
+    public String helloVisitor(){
+        return "<h1>Hello visitor</h1>";
+    }
+}
